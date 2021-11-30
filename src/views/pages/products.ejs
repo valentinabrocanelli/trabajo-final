@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body >
+
+    <%- include('../partials/nav-normal'); %>
+
+<main>
+    <br><br><br>
+    
+    <h2 class="titulo">Nuestras prendas</h2>
+    
+    <div class="box_products">
+        <% products.forEach(prenda => {%>
+            <div class="swiper-slide">
+                <div class="slider-box">
+                    <div class="user">@<%-prenda.usuario%></div>
+                    <p class="nombre_prenda"><%-prenda.name%>
+                    <p class="detail"><%-prenda.marca%></p>
+                    <p class="detail"><%-prenda.meses_uso%> meses de uso</p>
+                    </p>
+                    <p class="price">$<%-prenda.price%></p>
+
+                    
+                    <div class="cart">
+                        <a href="#">Agregar al carrito</a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+    
+    
+</div>
+
+<%- include('../partials/footer'); %>
+</body>
+</html>
+

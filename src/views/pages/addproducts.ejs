@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('../partials/head.ejs')%>
+</head>
+<body>
+    <%-include('../partials/nav-normal.ejs')%>
+    <br>
+    <div class="container-sale">
+        <h2 class="titulo-venta ">Publicá tu producto</h2>
+        <form method="POST" action="/productos/addProduct" class="sale">
+            <h3>¡Pon los datos de tu prenda!</h3>
+            <input type="text" class="datos tipo-letra" id="name" name="name" placeholder="Nombre de tu prenda" required>
+            <input type="text" class="datos tipo-letra" id="marca" name="marca" placeholder="Marca" required>
+            <input type="number" class="datos tipo-letra" id="price" name="price" placeholder="Precio (en pesos argentinos)" required>
+            <br>
+            <label for="description" class="tipo-letra">Selecciona la categoría de tu prenda</label>
+            <select id="description" class="tipo-letra" required>
+                <optgroup label="Verano">
+                    <option value="top">Top</option>
+                    <option value="malla">Malla</option>
+                    <option value="short">Short</option>
+                    <option value="remera">Remera</option>
+                    <option value="jean">Jean</option>
+                    <option value="otro">Otro</option>
+                </optgroup>
+                <optgroup label="Invierno">
+                    <option value="buzo">Buzo</option>
+                    <option value="jean">Jean</option>
+                    <option value="sweater">Sweater</option>
+                    <option value="remera">Remera</option>
+                    <option value="campera">Campera</option>
+                    <option value="accesorio">Accesorio</option>
+                    <option value="otro">Otro</option>
+                </optgroup>
+            </select> 
+            <input type="number" class="datos tipo-letra" id="meses_uso" name="meses_uso" placeholder="Antiguedad (en meses)" required>
+            <input type="text" class="datos tipo-letra id="usuario" name="usuario" placeholder="Tu usuario" required>
+
+            <button type="submit" class="btn">Publicar</button>
+        </form>
+
+    </div>
+    <%- include('../partials/footer'); %>
+</body>
+</html>
